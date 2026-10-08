@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <!-- Accent Glow Gradient -->
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <!-- Shield Glow -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" stroke-opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 42px; fill: #ffffff; }
+    .subtitle { font-family: system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 20px; fill: #94a3b8; }
+    .badge-text { font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 13px; fill: #cbd5e1; }
+    
+    /* CSS Animations for dynamic visual elements */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.05); }
+    }
+    @keyframes dashMove {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes floatParticle {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .pulsing-bg { animation: pulseGlow 6s ease-in-out infinite; transform-origin: center; }
+    .animated-line { stroke-dasharray: 10, 10; animation: dashMove 20s linear infinite; }
+    .floating-card { animation: floatParticle 4s ease-in-out infinite; }
+  </style>
+
+  <!-- Background Layer -->
+  <rect width="1200" height="320" fill="url(#bgGrad)"/>
+  <rect width="1200" height="320" fill="url(#grid)"/>
+
+  <!-- Dynamic Animated Background Orbs -->
+  <circle cx="150" cy="100" r="180" fill="#4338ca" opacity="0.25" class="pulsing-bg" filter="url(#glow)"/>
+  <circle cx="1050" cy="220" r="200" fill="#7e22ce" opacity="0.2" class="pulsing-bg" filter="url(#glow)"/>
+
+  <!-- Background Network / Identity Connections (Dynamic feeling) -->
+  <g stroke="#475569" stroke-width="1.5" stroke-opacity="0.4" class="animated-line">
+    <line x1="100" y1="260" x2="300" y2="280" />
+    <line x1="300" y1="280" x2="500" y2="250" />
+    <line x1="800" y1="60" x2="980" y2="100" />
+    <line x1="980" y1="100" x2="1100" y2="40" />
+  </g>
+
+  <!-- Dynamic Security Node Icons in Background/Side -->
+  <g transform="translate(920, 70)" class="floating-card">
+    <rect x="0" y="0" width="210" height="170" rx="16" fill="#1e293b" stroke="#334155" stroke-width="2" opacity="0.85" />
+    <path d="M 30 40 L 180 40 M 30 75 L 150 75 M 30 110 L 170 110" stroke="#6366f1" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <circle cx="180" cy="40" r="6" fill="#10b981"/>
+    <circle cx="150" cy="75" r="6" fill="#f59e0b"/>
+    <circle cx="170" cy="110" r="6" fill="#ef4444"/>
+    <text x="30" y="145" class="badge-text" fill="#a855f7">IAM ACCESS GRAPH</text>
+  </g>
+
+  <!-- Left Side Security Shield Graphics -->
+  <g transform="translate(80, 80)">
+    <!-- Outer Shield -->
+    <path d="M 45 0 L 90 20 L 90 70 C 90 115 45 140 45 140 C 45 140 0 115 0 70 L 0 20 Z" fill="url(#accentGrad)" filter="url(#glow)" opacity="0.9"/>
+    <!-- Inner Lock Symbol -->
+    <path d="M 45 40 C 37 40 31 46 31 54 L 31 63 L 26 63 C 23 63 21 65 21 68 L 21 92 C 21 95 23 97 26 97 L 64 97 C 67 97 69 95 69 92 L 69 68 C 69 65 67 63 64 63 L 59 63 L 59 54 C 59 46 53 40 45 40 Z M 45 47 C 49 47 52 50 52 54 L 52 63 L 38 63 L 38 54 C 38 50 41 47 45 47 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- Foreground Main Title & Subtitle (Clear, readable, unaffected by background graphics) -->
+  <g transform="translate(200, 120)">
+    <!-- Top Pill Category -->
+    <rect x="0" y="-45" width="280" height="32" rx="16" fill="#312e81" stroke="#6366f1" stroke-width="1.5"/>
+    <text x="14" y="-24" class="badge-text" fill="#818cf8">🔐 CLOUD SECURITY &amp; CIEM</text>
+
+    <!-- Main Title -->
+    <text x="0" y="25" class="title">Awesome IAM Policy Access Analysis 🛡️</text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="65" class="subtitle">Curated Commercial &amp; Open-Source Permissions Analysis Platforms</text>
+    <text x="0" y="95" class="subtitle" font-size="16px" fill="#64748b">Least Privilege Enforcement • Privilege Escalation • Governance • CIEM</text>
+  </g>
+
+  <!-- Decorative Bottom Line Gradient -->
+  <rect x="0" y="314" width="1200" height="6" fill="url(#accentGrad)"/>
+</svg>
