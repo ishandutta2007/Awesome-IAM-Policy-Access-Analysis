@@ -1,249 +1,189 @@
-# Awesome-IAM-Policy-Access-Analysis
-
-## Top IAM Policy & Access Analysis Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Permissions Analysis, Least Privilege Enforcement & Self-Hosted CIEM*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **commercial IAM policy and access analysis platforms** and **open-source projects** that identify excessive permissions, detect unused access, and enforce least privilege across cloud and SaaS environments — from agentless CIEM platforms to policy-as-code analyzers.
-
-
-
-**Examples** include AWS IAM Access Analyzer, Ermetic (Tenable), Wiz, Palo Alto Prisma Cloud, Orca Security, Britive, Sonrai Security, Check Point CloudGuard, PingSafe, and Microsoft Entra Permissions Management (the category leaders).
-
-
-
-**Open-source emphasis**: IAM policy and access analysis is a growing open-source domain. **Cloudsplaining** leads as the de facto open-source AWS IAM analyzer with policy prioritization and risk scoring . **PMapper** brings graph-based privilege escalation detection for AWS IAM . **aws-iam-analyzer** provides an open-source alternative to Access Analyzer for on-premises environments and private AWS accounts . **Custodian** delivers policy-as-code for cloud governance . **Parliament** and **policy_sentry** handle IAM linting and least-privilege policy generation . **IAMSpy** enables continuous monitoring with attack path analysis and visualizations . **PMapper** and **Cloudsplaining** remain the core open-source CIEM toolset . This section is heavily expanded.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[AWS IAM Access Analyzer](https://aws.amazon.com/iam/access-analyzer/)**  
-
-  **AWS's native IAM analysis service** — identifies resources shared with external entities and validates IAM policies . **Policy validation for grammar and best practices** . **Unused access findings** — identifies roles, users, and permissions not used in the last 90 days . **Custom policy checks** in CI/CD pipelines . **Best for AWS-native IAM analysis** .
-
-
-
-- **[Ermetic (Tenable)](https://www.tenable.com/)**  
-
-  **Cloud infrastructure entitlement management (CIEM) platform** — agentless analysis of multi-cloud permissions . **Detection of excessive permissions and privilege escalation paths** . **Best for multi-cloud entitlement management** .
-
-
-
-- **[Wiz](https://www.wiz.io/)**  
-
-  **CNAPP with CIEM capabilities** — graph-based attack path analysis including identity risks . **Effective permissions analysis across cloud providers** . **Best for unified cloud security with identity context** .
-
-
-
-- **[Palo Alto Prisma Cloud](https://www.paloaltonetworks.com/prisma/cloud)**  
-
-  **Comprehensive CNAPP with CIEM** — permissions analysis and least privilege enforcement . **Best for large enterprises** .
-
-
-
-- **[Orca Security](https://orca.security/)**  
-
-  **Agentless CNAPP with identity analysis** — detects excessive permissions and lateral movement paths . **Best for agentless cloud security** .
-
-
-
-- **[Britive](https://www.britive.com/)**  
-
-  **Cloud privileged access management** — just-in-time access and entitlement management . **Best for cloud PAM** .
-
-
-
-- **[Sonrai Security](https://sonrai.com/)**  
-
-  **Cloud permissions and identity management** — CIEM with identity graph analysis . **Best for cloud identity governance** .
-
-
-
-- **[Check Point CloudGuard](https://www.checkpoint.com/)**  
-
-  **Cloud security with CIEM** — posture management and entitlement analysis . **Best for Check Point ecosystem users** .
-
-
-
-- **[PingSafe](https://www.pingsafe.com/)**  
-
-  **Cloud security with IAM analysis** (acquired by SentinelOne) — agentless posture and permissions assessment . **Best for cloud security posture** .
-
-
-
-- **[Microsoft Entra Permissions Management](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-permissions-management)**  
-
-  **Microsoft's CIEM solution** — permissions analysis across AWS, Azure, and GCP . **Best for Microsoft-centric multi-cloud identity** .
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### IAM Policy Analyzers
-
-
-
-- **[Cloudsplaining](https://github.com/salesforce/cloudsplaining)**  
-
-  **The de facto open-source AWS IAM security assessment tool**, BSD-3-Clause licensed with **2,900+ GitHub stars** . **Identifies violations of least privilege** in IAM policies and prioritizes them by risk . **Scans all AWS accounts, IAM users, groups, roles, and policies** — custom policies, inline policies, and AWS-managed policies . **Generates a security assessment report** with clickable HTML reports . **Policy prioritization** with risk scoring to focus remediation on highest-impact findings . **The most widely adopted open-source IAM analyzer** — used by security teams worldwide . **Best for AWS IAM policy analysis** .
-
-
-
-- **[PMapper (Principal Mapper)](https://github.com/nccgroup/PMapper)**  
-
-  **Rapidly identify and visualize AWS IAM privilege escalation and resource exposure**, GPL-3.0 licensed with **1,700+ GitHub stars** . **Creates a graph of IAM principals (users and roles) and their access to AWS resources** . **Offline graph queries** for exploring relationships and identifying privilege escalation paths . **Preset queries** for common questions like "Who can access S3 buckets?" and "Which principals can become admin?" . **Interactive visualization** via query command . **The reference tool for AWS IAM privilege escalation analysis** . **Best for identifying privilege escalation paths** .
-
-
-
-- **[aws-iam-analyzer](https://github.com/awslabs/aws-iam-analyzer)**  
-
-  **Open-source alternative to AWS IAM Access Analyzer**, Apache-2.0 licensed . **Detects resources shared with external entities** — S3 buckets, IAM roles, KMS keys, Lambda functions, SQS queues, Secrets Manager secrets . **Local analysis without external dependencies** — runs on-premises or in AWS accounts without Access Analyzer . **Transitive access analysis** — detects resource sharing with entities that can access other shared resources . **Findings in JSON format** with wildcard analysis (resource policies, ACLs, service principals, principals with wildcard access) . **Infrastructure-as-Code policy support** — analyze policies without deploying to AWS, with fixed tokens for variables . **Best for private AWS accounts and IaC validation** .
-
-
-
-### Least Privilege & Policy Generation
-
-
-
-- **[Policy Sentry](https://github.com/salesforce/policy_sentry)**  
-
-  **IAM Least Privilege Policy Generator**, BSD-3-Clause licensed with **2,000+ GitHub stars** . **Reverse-engineers and creates IAM policies** from API calls or CloudTrail activity . **Escalation templates** for identifying privilege escalation risks . **Access Advisor and CloudTrail audit modes** — generate least-privilege policies from actual usage . **Query mode** for exploring IAM permissions . **Best for least privilege policy generation** .
-
-
-
-- **[Parliament](https://github.com/duo-labs/parliament)**  
-
-  **AWS IAM linting library**, BSD-3-Clause licensed with **1,200+ GitHub stars** . **Offline linting of IAM policies, S3 bucket policies, resource policies, and service control policies** . **Automatic policy checking** with configurable severity levels . **CI/CD integration** for policy validation before deployment . **Best for IAM policy linting** .
-
-
-
-- **[Custodian](https://github.com/cloud-custodian/cloud-custodian)**  
-
-  **Rules engine for cloud security, cost optimization, and governance**, Apache-2.0 licensed with **5,000+ GitHub stars** . **Policy-as-code for AWS, Azure, and GCP** . **Real-time remediation and enforcement** . **Best for cloud governance automation** .
-
-
-
-### Attack Path & Graph Analysis
-
-
-
-- **[IAMSpy](https://github.com/WithSecureLabs/IAMSpy)**  
-
-  **Continuous IAM monitoring and analysis platform**, Apache-2.0 licensed . **Collects IAM configuration using AWS APIs** — users, groups, roles, policies, S3 bucket policies, KMS key policies . **Generates visualizations** (HTML) of collected data . **Detects privilege escalation issues** with GraphML output for yEd and Neo4j . **Maintains state between runs** — notifies about new issues, deleted issues, and unchanged issues . **Best for continuous IAM monitoring** .
-
-
-
-- **[Cartography](https://github.com/cartography-cncf/cartography)**  
-
-  **Graph-based cloud infrastructure security analysis**, Apache-2.0 licensed with **3,000+ GitHub stars** . **Consolidates infrastructure assets and relationships into a Neo4j graph** . **Query-based security analysis** — identify relationships and attack paths . **Supports AWS, Azure, GCP, and more** . **Best for graph-based cloud security analysis** .
-
-
-
-- **[Repokid](https://github.com/Netflix/repokid)**  
-
-  **AWS least privilege tool from Netflix**, Apache-2.0 licensed . **Removes unused IAM permissions based on access advisor data** . **Scheduled execution for continuous least privilege enforcement** . **Best for automated least privilege enforcement** .
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Cloudsplaining** — The de facto open-source AWS IAM analyzer .
-
-- **PMapper** — Privilege escalation path analysis .
-
-- **aws-iam-analyzer** — Open-source Access Analyzer alternative .
-
-- **Policy Sentry** — Least privilege policy generation .
-
-- **Parliament** — IAM linting library .
-
-- **Custodian** — Cloud governance rules engine .
-
-- **Cartography** — Graph-based cloud security analysis .
-
-- **Repokid** — Automated least privilege enforcement from Netflix .
-
-- **Aardvark** — Netflix's multi-account AWS IAM-based privilege de-escalation .
-
-- **CloudTracker** — CloudTrail log analysis for identifying unused IAM permissions .
-
-
-
-**Frameworks for building custom IAM policy and access analysis solutions**: Combine **Cloudsplaining** for comprehensive AWS IAM policy analysis and risk prioritization . Use **PMapper** for privilege escalation path detection and graph visualization . Deploy **aws-iam-analyzer** for open-source Access Analyzer functionality in private accounts . Integrate **Policy Sentry** for least privilege policy generation from CloudTrail activity . Choose **Parliament** for IAM linting in CI/CD pipelines . Use **Custodian** for policy-as-code governance . Integrate **IAMSpy** for continuous IAM monitoring and attack path analysis . Choose **Repokid** for automated least privilege enforcement . Note that true enterprise CIEM with multi-cloud entitlement graphs, just-in-time access workflows, and vendor-supported SLAs (Ermetic, Wiz, Britive) remains primarily commercial territory; open-source stacks provide strong policy analysis, privilege escalation detection, and least privilege enforcement foundations that require integration for complete IAM access analysis.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- IAM analysis platforms handle sensitive access configuration data. Self-hosted solutions require proper security hardening, access controls, and compliance with data privacy regulations.
-
-- **IAM analysis tools require read-only credentials** — never grant write access to analysis tools. Use dedicated service accounts with least-privilege policies for scanning .
-
-- **Policy analysis is not a one-time activity** — permissions drift continuously. Cloudsplaining, IAMSpy, and Repokid support scheduled execution for continuous monitoring .
-
-- **License considerations**: Cloudsplaining uses BSD-3-Clause , PMapper uses GPL-3.0 , aws-iam-analyzer uses Apache-2.0 , Policy Sentry uses BSD-3-Clause , Parliament uses BSD-3-Clause , and Custodian uses Apache-2.0 . Verify licensing against your use case before committing.
-
-- The open-source ecosystem provides strong policy analysis, privilege escalation detection, and least privilege enforcement foundations, but **multi-cloud entitlement graphs, just-in-time access workflows, and vendor-supported SLAs** remain primarily commercial offerings.
-
-
+<p align="center">
+  <img src="assets/banner.svg" alt="Awesome IAM Policy & Access Analysis Banner" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a><a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-IAM-Policy-Access-Analysis/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-IAM-Policy-Access-Analysis?style=flat&color=yellow" alt="Stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-IAM-Policy-Access-Analysis/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-IAM-Policy-Access-Analysis?style=flat&color=blue" alt="Forks" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-IAM-Policy-Access-Analysis/blob/main/LICENSE"><img src="https://img.shields.io/github/license/ishandutta2007/Awesome-IAM-Policy-Access-Analysis?style=flat&color=green" alt="License" /></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+
+# 🛡️ Awesome IAM Policy & Access Analysis Ecosystem 🔑
+
+> **A curated directory of top Cloud Infrastructure Entitlement Management (CIEM) platforms, IAM policy analyzers, least privilege enforcement engines, and open-source cloud security tools.**
 
 ---
 
+## 💡 Overview & SEO Context 🔍
 
+Welcome to the ultimate security guide for **IAM Policy & Access Analysis**! Managing cloud permissions in AWS, Azure, GCP, and SaaS environments is one of the most critical challenges in modern cybersecurity. Excessive permissions, privilege escalation paths, and inactive credentials are leading vectors for cloud security breaches.
 
-**Made for security engineers, cloud architects, and organizations seeking IAM policy and access analysis sovereignty.**  
+This repository tracks notable **commercial CIEM platforms** and **open-source tools** designed to:
+- 🕵️‍♂️ **Detect excessive & unused permissions** across multi-cloud environments.
+- 📉 **Enforce least privilege access** through automated policy generation and remediation.
+- 🕸️ **Analyze attack paths & privilege escalation graph relationships**.
+- 📑 **Validate & lint IAM policies** in CI/CD infrastructure-as-code pipelines.
 
-Let's make IAM policy and access analysis more open, transparent, and least-privilege oriented.
+---
+
+## 📑 Table of Contents 📌
+
+- [🏢 SaaS & Commercial Platforms](#-saas--commercial-platforms-)
+  - [📊 Market Landscape Analysis](#-market-landscape-analysis-)
+- [🔓 Open-Source GitHub Projects](#-open-source-github-projects-)
+  - [🔍 IAM Policy Analyzers](#-iam-policy-analyzers)
+  - [🛡️ Least Privilege & Policy Generation](#%EF%B8%8F-least-privilege--policy-generation)
+  - [🕸️ Attack Path & Graph Analysis](#%EF%B8%8F-attack-path--graph-analysis)
+  - [🌟 Sorted Open-Source Repositories Overview](#-sorted-open-source-repositories-overview)
+- [🤝 How to Contribute](#-how-to-contribute-)
+- [💖 Support & Sponsorship](#-support--sponsorship-)
+- [📈 Star History](#-star-history-)
+- [⚠️ Disclaimer](#%EF%B8%8F-disclaimer-)
+
+---
+
+## 🏢 SaaS & Commercial Platforms ☁️
+
+### 📊 Market Landscape Analysis 📈
+> **Estimated Sector Market Size & Dynamics**: The global **Cloud Infrastructure Entitlement Management (CIEM)** and IAM security market is estimated at **$1.8 Billion to $2.5 Billion (2026)** and is projected to expand at a compound annual growth rate (CAGR) exceeding 25%.  
+> **Market Structure**: The market is **moderately fragmented**, transitioning from specialized point-solution startups toward consolidation by broader Cloud-Native Application Protection Platforms (CNAPP) and hyperscalers (e.g., Google's acquisition of Wiz for $32B, SentinelOne's acquisition of PingSafe, Tenable's acquisition of Ermetic). While hyperscalers dominate native cloud environments, multi-cloud entitlement management remains a competitive landscape without a single "winner-take-all" vendor.
+
+| Product / Company | Description | Company Size (Valuation / Revenue / Market Cap) | Starting Price | Free Tier Limit / Free Trial |
+| :--- | :--- | :--- | :--- | :--- |
+| **[Microsoft Entra Permissions Management](https://www.microsoft.com/en-us/security/business/identity-access/microsoft-entra-permissions-management)** | Microsoft's CIEM solution — permissions analysis across AWS, Azure, and GCP. Best for Microsoft-centric multi-cloud identity. (Retired Nov 2025; migrated to Entra Suite). | **$3.93 Trillion** (Parent Microsoft Market Cap) / **$331.8B** Annual Revenue | **$125.00** per resource per year (Historical standalone rate prior to retirement) | **90-Day Free Trial** (90-day evaluation trial previously offered) |
+| **[AWS IAM Access Analyzer](https://aws.amazon.com/iam/access-analyzer/)** | AWS's native IAM analysis service — identifies resources shared with external entities, validates policies, and detects unused access. Best for AWS-native IAM analysis. | **$2.20 Trillion** (Parent Amazon Market Cap) / **$620B+** Annual Revenue | **$0.00** for External Access Analysis; **$0.20** per IAM role/user analyzed per month for Unused Access | **Free Forever** for External Access Findings; **30-Day Free Trial** for Unused Access Analysis |
+| **[Palo Alto Prisma Cloud](https://www.paloaltonetworks.com/prisma/cloud)** | Comprehensive CNAPP with CIEM — permissions analysis and least privilege enforcement. Best for large enterprises. | **$325 Billion** (Parent Palo Alto Networks Market Cap) / **$11.48B** Annual Revenue | **$9,000.00** per year (Business Edition for 100 credit tier) | **30-Day Free Trial** (Full evaluation trial upon request) |
+| **[Wiz](https://www.wiz.io/)** | CNAPP with CIEM capabilities — graph-based attack path analysis including identity risks. Best for unified cloud security with identity context. | **$32 Billion** (Acquired by Google for $32B) / **$1.0B+** Annual ARR | **$25,000.00** per year (Estimated starting enterprise tier based on workload volume) | **1-on-1 Free Risk Assessment / PoC Trial** upon sales request |
+| **[Check Point CloudGuard](https://www.checkpoint.com/)** | Cloud security with CIEM — posture management and entitlement analysis. Best for Check Point ecosystem users. | **$13.48 Billion** (Parent Check Point Market Cap) / **$2.57B** Annual Revenue | **$0.40** per gateway/workload hour (AWS Marketplace PAYG starting rate) | **30-Day Free Trial** (Available via Check Point portal & AWS Marketplace) |
+| **[PingSafe](https://www.pingsafe.com/)** | Cloud security with IAM analysis — agentless posture and permissions assessment. Best for cloud security posture. | **$8.81 Billion** (Parent SentinelOne Market Cap; acquired for **$100M**) / **$1.00B** Annual Revenue | **$15,000.00** per year (Integrated within SentinelOne Singularity Cloud Security package) | **14-Day Free Trial / Demo** available via SentinelOne Singularity platform |
+| **[Ermetic (Tenable)](https://www.tenable.com/)** | Cloud infrastructure entitlement management (CIEM) platform — agentless analysis of multi-cloud permissions. Best for multi-cloud entitlement management. | **$4.8 Billion** (Parent Tenable Market Cap; acquired Ermetic for **$265M**) / **$850M** Revenue | **$3,000.00** per year (Tenable Cloud Security asset-based starter bundle) | **30-Day Free Trial / Evaluation** upon request |
+| **[Orca Security](https://orca.security/)** | Agentless CNAPP with identity analysis — detects excessive permissions and lateral movement paths. Best for agentless cloud security. | **$1.8 Billion** Valuation / **$140M** Estimated ARR | **$15,000.00** per year (Custom workload/asset volume based enterprise tier) | **30-Day Free Trial / Security Risk Assessment** via AWS Marketplace |
+| **[Sonrai Security](https://sonrai.com/)** | Cloud permissions and identity management — CIEM with identity graph analysis. Best for cloud identity governance. | **$250 Million** Valuation / **$18.4M** Estimated ARR | **$10,000.00** per year (Enterprise starter tier based on cloud identity count) | **14-Day Free Trial** (Cloud Permissions Firewall free evaluation) |
+| **[Britive](https://www.britive.com/)** | Cloud privileged access management — just-in-time access and entitlement management. Best for cloud PAM. | **$100 Million** Valuation / **$9.0M** Estimated ARR | **$12,000.00** per year (Starting enterprise license based on user/identity volume) | **Interactive Demo / Custom Sandbox Trial** upon request |
+
+---
+
+## 🔓 Open-Source GitHub Projects 🛠️
+
+### 🔍 IAM Policy Analyzers
+
+- **[Cloudsplaining](https://github.com/salesforce/cloudsplaining)** [![Stars](https://img.shields.io/github/stars/salesforce/cloudsplaining?style=social&color=white)](https://github.com/salesforce/cloudsplaining/stargazers)  
+  **The de facto open-source AWS IAM security assessment tool**, BSD-3-Clause licensed. **Identifies violations of least privilege** in IAM policies and prioritizes them by risk. Scans AWS accounts, users, groups, roles, and generates interactive HTML reports.
+
+- **[PMapper (Principal Mapper)](https://github.com/nccgroup/PMapper)** [![Stars](https://img.shields.io/github/stars/nccgroup/PMapper?style=social&color=white)](https://github.com/nccgroup/PMapper/stargazers)  
+  **AWS IAM privilege escalation & resource exposure visualization**, GPL-3.0 licensed. Creates a graph of IAM principals (users and roles) and their access to AWS resources with offline graph queries.
+
+- **[aws-iam-analyzer](https://github.com/awslabs/aws-iam-analyzer)** [![Stars](https://img.shields.io/github/stars/awslabs/aws-iam-analyzer?style=social&color=white)](https://github.com/awslabs/aws-iam-analyzer/stargazers)  
+  **Open-source alternative to AWS IAM Access Analyzer**, Apache-2.0 licensed. Detects resources shared with external entities locally for on-premises environments, private accounts, and Infrastructure-as-Code validation.
+
+- **[Prowler](https://github.com/prowler-cloud/prowler)** [![Stars](https://img.shields.io/github/stars/prowler-cloud/prowler?style=social&color=white)](https://github.com/prowler-cloud/prowler/stargazers)  
+  **Open-source security assessment, auditing, and hardening tool** for AWS, GCP, Azure, and Kubernetes. Includes comprehensive IAM posture checks and compliance validation.
+
+---
+
+### 🛡️ Least Privilege & Policy Generation
+
+- **[Policy Sentry](https://github.com/salesforce/policy_sentry)** [![Stars](https://img.shields.io/github/stars/salesforce/policy_sentry?style=social&color=white)](https://github.com/salesforce/policy_sentry/stargazers)  
+  **IAM Least Privilege Policy Generator**, BSD-3-Clause licensed. Creates IAM policies from CloudTrail logs, API call history, or CRUD queries.
+
+- **[Parliament](https://github.com/duo-labs/parliament)** [![Stars](https://img.shields.io/github/stars/duo-labs/parliament?style=social&color=white)](https://github.com/duo-labs/parliament/stargazers)  
+  **AWS IAM linting library**, BSD-3-Clause licensed. Offline checking of IAM policies, S3 bucket policies, and SCPs for security flaws and syntax errors.
+
+- **[Custodian (Cloud Custodian)](https://github.com/cloud-custodian/cloud-custodian)** [![Stars](https://img.shields.io/github/stars/cloud-custodian/cloud-custodian?style=social&color=white)](https://github.com/cloud-custodian/cloud-custodian/stargazers)  
+  **Rules engine for cloud security, compliance, and governance**, Apache-2.0 licensed. Policy-as-code for AWS, Azure, and GCP with automated enforcement.
+
+- **[iamlive](https://github.com/iann0036/iamlive)** [![Stars](https://img.shields.io/github/stars/iann0036/iamlive?style=social&color=white)](https://github.com/iann0036/iamlive/stargazers)  
+  **Generate IAM policies from AWS client calls in real-time** using local HTTP proxy or CSM listening.
+
+---
+
+### 🕸️ Attack Path & Graph Analysis
+
+- **[Cartography](https://github.com/cartography-cncf/cartography)** [![Stars](https://img.shields.io/github/stars/cartography-cncf/cartography?style=social&color=white)](https://github.com/cartography-cncf/cartography/stargazers)  
+  **Graph-based cloud infrastructure security analysis**, Apache-2.0 licensed. Consolidates infrastructure assets and IAM relationships into a Neo4j graph.
+
+- **[BloodHound](https://github.com/SpecterOps/BloodHound)** [![Stars](https://img.shields.io/github/stars/SpecterOps/BloodHound?style=social&color=white)](https://github.com/SpecterOps/BloodHound/stargazers)  
+  **Active Directory & Azure AD (Entra ID) attack path management platform**. Uses graph theory to reveal hidden relationships in identity infrastructure.
+
+- **[Repokid](https://github.com/Netflix/repokid)** [![Stars](https://img.shields.io/github/stars/Netflix/repokid?style=social&color=white)](https://github.com/Netflix/repokid/stargazers)  
+  **AWS least privilege tool from Netflix**, Apache-2.0 licensed. Automatically removes unused IAM permissions based on Access Advisor data.
+
+- **[IAMSpy](https://github.com/WithSecureLabs/IAMSpy)** [![Stars](https://img.shields.io/github/stars/WithSecureLabs/IAMSpy?style=social&color=white)](https://github.com/WithSecureLabs/IAMSpy/stargazers)  
+  **Continuous IAM monitoring & privilege escalation detection tool**, Apache-2.0 licensed. Visualizes access relationships and exports to GraphML/Neo4j.
+
+- **[Aardvark](https://github.com/Netflix/aardvark)** [![Stars](https://img.shields.io/github/stars/Netflix/aardvark?style=social&color=white)](https://github.com/Netflix/aardvark/stargazers)  
+  **Netflix multi-account AWS IAM Access Advisor collector** for driving least privilege policy decisions.
+
+- **[CloudTracker](https://github.com/duo-labs/cloudtracker)** [![Stars](https://img.shields.io/github/stars/duo-labs/cloudtracker?style=social&color=white)](https://github.com/duo-labs/cloudtracker/stargazers)  
+  **CloudTrail log analyzer** to compare granted permissions against actual usage for over-privileged IAM users.
+
+---
+
+### 🌟 Sorted Open-Source Repositories Overview
+
+The open-source IAM & Cloud Security repositories listed below are **sorted by GitHub Star Count (Descending)**:
+
+| Rank | Repository | Stars | Category & Focus | License |
+| :---: | :--- | :---: | :--- | :--- |
+| 1 | **[Prowler](https://github.com/prowler-cloud/prowler)** | [![Stars](https://img.shields.io/github/stars/prowler-cloud/prowler?style=social&color=white)](https://github.com/prowler-cloud/prowler/stargazers) | Multi-cloud security assessment & IAM auditing | Apache-2.0 |
+| 2 | **[BloodHound](https://github.com/SpecterOps/BloodHound)** | [![Stars](https://img.shields.io/github/stars/SpecterOps/BloodHound?style=social&color=white)](https://github.com/SpecterOps/BloodHound/stargazers) | Active Directory & Azure AD identity attack graph | BSD-3-Clause |
+| 3 | **[Custodian](https://github.com/cloud-custodian/cloud-custodian)** | [![Stars](https://img.shields.io/github/stars/cloud-custodian/cloud-custodian?style=social&color=white)](https://github.com/cloud-custodian/cloud-custodian/stargazers) | Multi-cloud governance & policy-as-code | Apache-2.0 |
+| 4 | **[Cartography](https://github.com/cartography-cncf/cartography)** | [![Stars](https://img.shields.io/github/stars/cartography-cncf/cartography?style=social&color=white)](https://github.com/cartography-cncf/cartography/stargazers) | Neo4j graph analysis for cloud assets & IAM | Apache-2.0 |
+| 5 | **[Cloudsplaining](https://github.com/salesforce/cloudsplaining)** | [![Stars](https://img.shields.io/github/stars/salesforce/cloudsplaining?style=social&color=white)](https://github.com/salesforce/cloudsplaining/stargazers) | AWS IAM policy risk scoring & prioritization | BSD-3-Clause |
+| 6 | **[iamlive](https://github.com/iann0036/iamlive)** | [![Stars](https://img.shields.io/github/stars/iann0036/iamlive?style=social&color=white)](https://github.com/iann0036/iamlive/stargazers) | Real-time AWS IAM policy generation | MIT |
+| 7 | **[Policy Sentry](https://github.com/salesforce/policy_sentry)** | [![Stars](https://img.shields.io/github/stars/salesforce/policy_sentry?style=social&color=white)](https://github.com/salesforce/policy_sentry/stargazers) | CloudTrail-based least-privilege generator | BSD-3-Clause |
+| 8 | **[PMapper](https://github.com/nccgroup/PMapper)** | [![Stars](https://img.shields.io/github/stars/nccgroup/PMapper?style=social&color=white)](https://github.com/nccgroup/PMapper/stargazers) | AWS IAM privilege escalation graph analysis | GPL-3.0 |
+| 9 | **[Parliament](https://github.com/duo-labs/parliament)** | [![Stars](https://img.shields.io/github/stars/duo-labs/parliament?style=social&color=white)](https://github.com/duo-labs/parliament/stargazers) | AWS IAM policy linter & validator | BSD-3-Clause |
+| 10 | **[Repokid](https://github.com/Netflix/repokid)** | [![Stars](https://img.shields.io/github/stars/Netflix/repokid?style=social&color=white)](https://github.com/Netflix/repokid/stargazers) | Netflix automated IAM privilege repoing | Apache-2.0 |
+| 11 | **[CloudTracker](https://github.com/duo-labs/cloudtracker)** | [![Stars](https://img.shields.io/github/stars/duo-labs/cloudtracker?style=social&color=white)](https://github.com/duo-labs/cloudtracker/stargazers) | CloudTrail usage vs IAM permission comparison | BSD-3-Clause |
+| 12 | **[aws-iam-analyzer](https://github.com/awslabs/aws-iam-analyzer)** | [![Stars](https://img.shields.io/github/stars/awslabs/aws-iam-analyzer?style=social&color=white)](https://github.com/awslabs/aws-iam-analyzer/stargazers) | On-prem & IaC IAM Access Analyzer | Apache-2.0 |
+| 13 | **[IAMSpy](https://github.com/WithSecureLabs/IAMSpy)** | [![Stars](https://img.shields.io/github/stars/WithSecureLabs/IAMSpy?style=social&color=white)](https://github.com/WithSecureLabs/IAMSpy/stargazers) | Continuous AWS IAM monitoring & GraphML export | Apache-2.0 |
+| 14 | **[Aardvark](https://github.com/Netflix/aardvark)** | [![Stars](https://img.shields.io/github/stars/Netflix/aardvark?style=social&color=white)](https://github.com/Netflix/aardvark/stargazers) | Netflix multi-account IAM Access Advisor collector | Apache-2.0 |
+
+---
+
+## 🤝 How to Contribute 📝
+
+Contributions are very welcome! To add or update a tool:
+
+1. 🍴 Fork this repository.
+2. ✏️ Edit `README.md` following the existing format.
+3. 📋 Ensure new entries include tool name, website/repo link, key features, and licensing information.
+4. 🚀 Open a Pull Request with a short summary of your addition.
+
+---
+
+## 💖 Support & Sponsorship ☕
+
+If you find this curated ecosystem directory useful, please consider giving it a ⭐ **Star** or sharing it with fellow security engineers and cloud architects!
+
+You can also support the maintainer by buying a coffee or sponsoring future security open-source research:
+
+<a href="https://github.com/sponsors/ishandutta2007">
+  <img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-pink?style=for-the-badge&logo=github" alt="Sponsor on GitHub" />
+</a>
+
+Thank you for helping us make cloud identity security more transparent, accessible, and least-privilege oriented! 🙌
+
+---
+
+## 📈 Star History 📊
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-IAM-Policy-Access-Analysis&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-IAM-Policy-Access-Analysis&type=date&legend=top-left)
+
+---
+
+## ⚠️ Disclaimer 📜
+
+- This list is **community-curated** for educational and security research purposes only.
+- **Credential Safety**: IAM analysis tools require read-only credentials. Never grant write access to analysis tools. Use dedicated service accounts with least-privilege policies for scanning.
+- **Continuous Security**: Policy analysis is not a one-time activity. Permissions drift continuously; schedule automated runs in your CI/CD or cloud environment.
+
+---
+
+<p align="center">
+  <b>Made with ❤️ for security engineers, cloud architects, and DevSecOps practitioners worldwide.</b>
+</p>
+
