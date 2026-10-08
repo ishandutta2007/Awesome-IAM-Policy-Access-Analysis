@@ -123,9 +123,9 @@ This repository tracks notable **commercial CIEM platforms** and **open-source t
 
 ### 🌟 Sorted Open-Source Repositories Overview
 
-The open-source IAM & Cloud Security repositories listed below are **sorted by GitHub Star Count (Descending)**:
+The open-source IAM & Cloud Security repositories listed below are **sorted by GitHub Stars_Count (Descending)**:
 
-| Rank | Repository | Stars | Category & Focus | License |
+| Rank | Repository | GitHub_Stars | Category & Focus | License |
 | :---: | :--- | :---: | :--- | :--- |
 | 1 | **[Prowler](https://github.com/prowler-cloud/prowler)** | [![Stars](https://img.shields.io/github/stars/prowler-cloud/prowler?style=social&color=white)](https://github.com/prowler-cloud/prowler/stargazers) | Multi-cloud security assessment & IAM auditing | Apache-2.0 |
 | 2 | **[BloodHound](https://github.com/SpecterOps/BloodHound)** | [![Stars](https://img.shields.io/github/stars/SpecterOps/BloodHound?style=social&color=white)](https://github.com/SpecterOps/BloodHound/stargazers) | Active Directory & Azure AD identity attack graph | BSD-3-Clause |
